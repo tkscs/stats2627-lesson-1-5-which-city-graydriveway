@@ -1,0 +1,12 @@
+schema: "classroom50/repo-config/v1"
+classroom: "stats2627"
+assignment: "lesson-1-5-which-city"
+owner:
+  username: "graydriveway"
+  id: 308549674
+  accepted_at: "2026-09-08T16:48:33Z"
+source:
+  owner: "tkscs"
+  owner_id: 215133286
+  repo: "lesson_1_5_which_city_has_better_weather"
+  branch: "main"
