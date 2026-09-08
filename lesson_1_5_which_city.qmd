@@ -1,0 +1,60 @@
+---
+title: "lesson_1_5_which_city"
+format: html
+---
+
+First, load the libraries and the data by running the code block below:
+
+```{r}
+library(tidyverse)
+cities = tibble(
+  denver = c(44, 51, 61, 65, 80, 89),
+  sf = c(60, 63, 65, 65, 66, 71)
+)
+cities
+```
+
+First, make a histogram of the denver temperatures.
+
+```{r}
+cities |> 
+  ggplot(aes(x = denver)) +
+  geom_histogram(binwidth = 10)
+```
+
+To calculate statistics for just the denver temperatures, use the `pull` function:
+
+```{r}
+denver_temperatures = 
+  cities |> 
+  pull(denver)
+```
+
+Calculate the mean temperature in Denver:
+
+```{r}
+mean(denver_temperatures)
+```
+
+Calculate the standard deviation of the temperatures in Denver:
+
+```{r}
+sd(denver_temperatures)
+```
+
+Calculate the "five number summary":
+
+* The minimum (at 0% of the data)
+* The first quartile (at the first 1/4 of the data)
+* The median (also called the 2nd quartile, t the first 1/2 of the data)
+* The third quartile (at the first 3/4 of the data)
+* The maximum (at 100% of the data)
+
+```{r}
+quantile(denver_temperatures, c(0, 1/4, 1/2, 3/4, 1))
+```
+
+WRITE THESE NUMBERS IN YOUR WORKSHEET, THEN CONTINUE WITH THE WORKSHEET
+
+If you want to make a new code block, use Cmd+Option+i (or Ctrl+Option+i for Windows).
+
